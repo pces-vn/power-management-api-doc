@@ -1,0 +1,393 @@
+FORMAT: 1A
+
+# Power Management
+
+Power Management is a service to control PDUs manufactured by PCES.
+
+## Group Devices
+
+### List All Devices [GET /api/v1/devices?{&page,per_page,query}]
+
++ Parameters
+    
+    + page: 1 (number) - Page number
+    + per_page: 25 (number) - Items per page
+    + query: 12PDUCTRL (string) - Filter devices by ID or Name
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Per-Page: 25
+            Total: 1
+
+    + Body
+
+            [
+              {
+                "id": "12PDUCTRL",
+                "name": "12PDUCTRL",
+                "power_supply_status": "on",
+                "switches": [
+                  {
+                    "id": 1,
+                    "name": "SW01",
+                    "status": "on",
+                    "index": 1
+                  },
+                  {
+                    "id": 2,
+                    "name": "SW02",
+                    "status": "on",
+                    "index": 2
+                  },
+                  {
+                    "id": 3,
+                    "name": "SW03",
+                    "status": "on",
+                    "index": 3
+                  },
+                  {
+                    "id": 4,
+                    "name": "SW04",
+                    "status": "on",
+                    "index": 4
+                  },
+                  {
+                    "id": 5,
+                    "name": "SW05",
+                    "status": "on",
+                    "index": 5
+                  },
+                  {
+                    "id": 6,
+                    "name": "SW06",
+                    "status": "on",
+                    "index": 6
+                  },
+                  {
+                    "id": 7,
+                    "name": "SW07",
+                    "status": "on",
+                    "index": 7
+                  },
+                  {
+                    "id": 8,
+                    "name": "SW08",
+                    "status": "on",
+                    "index": 8
+                  },
+                  {
+                    "id": 9,
+                    "name": "SW09",
+                    "status": "on",
+                    "index": 9
+                  },
+                  {
+                    "id": 10,
+                    "name": "SW10",
+                    "status": "on",
+                    "index": 10
+                  },
+                  {
+                    "id": 11,
+                    "name": "SW11",
+                    "status": "on",
+                    "index": 11
+                  },
+                  {
+                    "id": 12,
+                    "name": "SW12",
+                    "status": "on",
+                    "index": 12
+                  }
+                ]
+              }
+            ]
+
+### Get a Device's Details [GET /api/v1/devices/{device_identifier}]
+
++ Parameters
+    
+    + device_identifier: 12PDUCTRL (string) - ID or Name of the device
+
++ Response 200 (application/json)
+
+            {
+              "id": "12PDUCTRL",
+              "name": "12PDUCTRL",
+              "power_supply_status": "on",
+              "switches": [
+                {
+                  "id": 1,
+                  "name": "SW01",
+                  "status": "on",
+                  "index": 1
+                },
+                {
+                  "id": 2,
+                  "name": "SW02",
+                  "status": "on",
+                  "index": 2
+                },
+                {
+                  "id": 3,
+                  "name": "SW03",
+                  "status": "on",
+                  "index": 3
+                },
+                {
+                  "id": 4,
+                  "name": "SW04",
+                  "status": "on",
+                  "index": 4
+                },
+                {
+                  "id": 5,
+                  "name": "SW05",
+                  "status": "on",
+                  "index": 5
+                },
+                {
+                  "id": 6,
+                  "name": "SW06",
+                  "status": "on",
+                  "index": 6
+                },
+                {
+                  "id": 7,
+                  "name": "SW07",
+                  "status": "on",
+                  "index": 7
+                },
+                {
+                  "id": 8,
+                  "name": "SW08",
+                  "status": "on",
+                  "index": 8
+                },
+                {
+                  "id": 9,
+                  "name": "SW09",
+                  "status": "on",
+                  "index": 9
+                },
+                {
+                  "id": 10,
+                  "name": "SW10",
+                  "status": "on",
+                  "index": 10
+                },
+                {
+                  "id": 11,
+                  "name": "SW11",
+                  "status": "on",
+                  "index": 11
+                },
+                {
+                  "id": 12,
+                  "name": "SW12",
+                  "status": "on",
+                  "index": 12
+                }
+              ]
+            }
+
+### Create a New Device [POST /api/v1/devices]
+
++ Request (application/json)
+
+        {
+          "id": "12PDUCTRL-1",
+          "name": "12PDUCTRL-1"
+        }
+
++ Response 201 (application/json)
+
+        {
+          "id": "12PDUCTRL-1",
+          "name": "12PDUCTRL-1",
+          "power_supply_status": "on",
+          "switches": [
+            {
+              "id": 13,
+              "name": "SW01",
+              "status": "on",
+              "index": 1
+            },
+            {
+              "id": 14,
+              "name": "SW02",
+              "status": "on",
+              "index": 2
+            },
+            {
+              "id": 15,
+              "name": "SW03",
+              "status": "on",
+              "index": 3
+            },
+            {
+              "id": 16,
+              "name": "SW04",
+              "status": "on",
+              "index": 4
+            },
+            {
+              "id": 17,
+              "name": "SW05",
+              "status": "on",
+              "index": 5
+            },
+            {
+              "id": 18,
+              "name": "SW06",
+              "status": "on",
+              "index": 6
+            },
+            {
+              "id": 19,
+              "name": "SW07",
+              "status": "on",
+              "index": 7
+            },
+            {
+              "id": 20,
+              "name": "SW08",
+              "status": "on",
+              "index": 8
+            },
+            {
+              "id": 21,
+              "name": "SW09",
+              "status": "on",
+              "index": 9
+            },
+            {
+              "id": 22,
+              "name": "SW10",
+              "status": "on",
+              "index": 10
+            },
+            {
+              "id": 23,
+              "name": "SW11",
+              "status": "on",
+              "index": 11
+            },
+            {
+              "id": 24,
+              "name": "SW12",
+              "status": "on",
+              "index": 12
+            }
+          ]
+        }
+
++ Request (application/json)
+
+        {
+          "id": "12PDUCTRL",
+          "name": "12PDUCTRL"
+        }
+
++ Response 422 (application/json)
+
+        {
+          "id": [
+            "has already been taken"
+          ],
+          "name": [
+            "has already been taken"
+          ]
+        }
+
+### Update a Device [PUT /api/v1/devices/{device_identifier}]
+
++ Parameters
+    
+    + device_identifier: 12PDUCTRL-1 (string) - ID or Name of the device
+
++ Request (application/json)
+
+        {
+          "name": "Controller-1",
+          switches_attributes: [
+            {
+              "id": 13,
+              "name": "Switch 13"
+            }
+            {
+              "id": 24,
+              "name": "Switch 24"
+            }
+          ]
+        }
+
++ Response 204 (application/json)
+
++ Request (application/json)
+
+        {
+          "name": "12PDUCTRL"
+        }
+
++ Response 422 (application/json)
+
+        {
+          "name": [
+            "has already been taken"
+          ]
+        }
+
+### Delete a Device [DELETE /api/v1/devices/{device_identifier}]
+
++ Parameters
+    
+    + device_identifier: 12PDUCTRL-1 (string) - ID or Name of the device
+
++ Response 204 (application/json)
+
+## Group Switches
+
+### Update a Switch [PUT /api/v1/devices/{device_identifier}/switches/{switch_identifier}]
+
++ Parameters
+    
+    + device_identifier: 12PDUCTRL-1 (string) - ID or Name of the device
+    + switch_identifier: SW01 (string) - ID or Name of the switch
+
++ Request (application/json)
+
+        {
+          "name": "Switch-1",
+        }
+
++ Response 204 (application/json)
+
+### Turn a Switch On [PUT /api/v1/devices/{device_identifier}/switches/{switch_identifier}/on]
+
++ Parameters
+    
+    + device_identifier: 12PDUCTRL-1 (string) - ID or Name of the device
+    + switch_identifier: SW01 (string) - ID or Name of the switch
+
++ Response 204 (application/json)
+
+### Turn a Switch Off [PUT /api/v1/devices/{device_identifier}/switches/{switch_identifier}/off]
+
++ Parameters
+    
+    + device_identifier: 12PDUCTRL-1 (string) - ID or Name of the device
+    + switch_identifier: SW01 (string) - ID or Name of the switch
+
++ Response 204 (application/json)
+
+### Reset a Switch [PUT /api/v1/devices/{device_identifier}/switches/{switch_identifier}/reset]
+
++ Parameters
+    
+    + device_identifier: 12PDUCTRL-1 (string) - ID or Name of the device
+    + switch_identifier: SW01 (string) - ID or Name of the switch
+
++ Response 204 (application/json)
